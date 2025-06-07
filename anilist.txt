@@ -1,8 +1,0 @@
-# Example: Get user info
-curl -H "Authorization: Bearer $ANILIST_API_KEY" -X POST https://graphql.anilist.co -H "Content-Type: application/json" -d '{"query": "{ Viewer { id name } }"}'
-
-# Example: Search for an anime (e.g., "Naruto")
-curl -H "Authorization: Bearer $ANILIST_API_KEY" -X POST https://graphql.anilist.co -H "Content-Type: application/json" -d '{"query": "query ($search: String) { Media(search: $search, type: ANIME) { id title { romaji english native } } }", "variables": { "search": "Naruto" }}'
-
-# Example: Get details of a specific anime by ID (e.g., 1)
-curl -H "Authorization: Bearer $ANILIST_API_KEY" -X POST https://graphql.anilist.co -H "Content-Type: application/json" -d '{"query": "query ($id: Int) { Media(id: $id, type: ANIME) { id title { romaji english native } description } }", "variables": { "id": 1 }}' 
